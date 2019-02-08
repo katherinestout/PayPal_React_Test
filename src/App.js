@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import PayPalButton from './PayPalButton';
 import './App.css';
 
-//require('dotenv').configure();
-
-/*
-paypal.configure({
-  'mode': 'sandbox', //sandbox or live
-  'client_id': 'ARTyH8uojFhbF0OMuhYnsGtjwr6YOBuVyR1aShZmdv3zWRWIpO3UZMi6UcYvId-jFSFcXNB_Dipqg9Ba',
-  'client_secret': 'EDvuzF7pbswLpmhGs2W6MtZrBNm5AOmwJT34fkByoeeUkNYkqcHpyay6TW7AFWSCSV-xEUymTI2A9OYW'
-});
-*/
 
 require('dotenv').config(); 
 
@@ -31,6 +22,7 @@ class App extends Component {
 
   const onSuccess = (payment) =>
   console.log('Successful payment!', payment);
+  
 
   const onError = (error) =>
     console.log('Erroneous payment OR failed to load script!', error);
@@ -39,7 +31,7 @@ class App extends Component {
     console.log('Cancelled payment!', data);
 
     return (
-      <div className="App">
+      <div className="App card">
          <PayPalButton
           client={CLIENT}
           env={ENV}
